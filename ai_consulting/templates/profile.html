@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}个人资料{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>个人资料</h1>
+        <a href="{{ url_for('edit_profile') }}" class="btn-edit">编辑资料</a>
+    </div>
+
+    <div class="profile-card">
+        <div class="profile-info">
+            <div class="info-group">
+                <label>用户名</label>
+                <p>{{ user.username }}</p>
+            </div>
+            <div class="info-group">
+                <label>邮箱</label>
+                <p>{{ user.email }}</p>
+            </div>
+            <div class="info-group">
+                <label>电话</label>
+                <p>{{ user.phone or '未填写' }}</p>
+            </div>
+            <div class="info-group">
+                <label>公司</label>
+                <p>{{ user.company or '未填写' }}</p>
+            </div>
+            <div class="info-group">
+                <label>个人简介</label>
+                <p>{{ user.bio or '未填写' }}</p>
+            </div>
+            <div class="info-group">
+                <label>注册时间</label>
+                <p>{{ user.created_at }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="messages-section">
+        <h2>我的留言历史</h2>
+        {% if messages %}
+            <div class="messages-list">
+                {% for message in messages %}
+                    <div class="message-item">
+                        <div class="message-header">
+                            <strong>{{ message[1] }}</strong>
+                            <span class="message-date">{{ message[4] }}</span>
+                        </div>
+                        <p class="message-email">邮箱: {{ message[2] }}</p>
+                        <p class="message-content">{{ message[3] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-messages">您还没有留言记录</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+
+{% block title %}服务{% endblock %}
+
+{% block content %}
+<!-- 服务页面头部 -->
+<div class="services-hero">
+    <h1>我们的AI咨询服务</h1>
+    <p>全方位的人工智能解决方案，助力企业数字化转型</p>
+</div>
+
+<!-- 核心服务 -->
+<div class="services-container">
+    <h2 class="section-title">核心服务</h2>
+    <div class="service-grid">
+        <div class="service-item">
+            <div class="service-icon">
+                <img src="{{ url_for('static', filename='images/icons/strategy.png') }}" alt="战略图标">
+            </div>
+            <h3>AI战略咨询</h3>
+            <p>帮助企业评估AI应用潜力，制定科学的AI转型战略，确定优先实施领域和成功指标。</p>
+            <ul class="service-features">
+                <li>✓ 市场趋势分析</li>
+                <li>✓ 竞争对标研究</li>
+                <li>✓ 战略路线规划</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">
+                <img src="{{ url_for('static', filename='images/icons/solution.png') }}" alt="解决方案图标">
+            </div>
+            <h3>定制化解决方案开发</h3>
+            <p>根据企业需求开发专属的AI解决方案，从需求分析到上线部署，全流程支持。</p>
+            <ul class="service-features">
+                <li>✓ 需求分析设计</li>
+                <li>✓ 模型开发训练</li>
+                <li>✓ 系统集成上线</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">
+                <img src="{{ url_for('static', filename='images/icons/training.png') }}" alt="培训图标">
+            </div>
+            <h3>技术培训与赋能</h3>
+            <p>为企业员工提供系统的AI技术培训，建立内部AI研发能力和竞争优势。</p>
+            <ul class="service-features">
+                <li>✓ 基础理论培训</li>
+                <li>✓ 实践项目指导</li>
+                <li>✓ 团队能力建设</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">
+                <img src="{{ url_for('static', filename='images/icons/support.png') }}" alt="支持图标">
+            </div>
+            <h3>持续技术支持</h3>
+            <p>提供7x24小时的技术支持和运维服务，确保AI系统稳定运行和持续优化。</p>
+            <ul class="service-features">
+                <li>✓ 7x24技术支持</li>
+                <li>✓ 系统监控优化</li>
+                <li>✓ 迭代升级服务</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 成功案例 -->
+<div class="cases-section">
+    <h2 class="section-title">成功案例</h2>
+    <div class="cases-grid">
+        <!-- 案例1 -->
+        <div class="case-card">
+            <div class="case-image">
+                <img src="{{ url_for('static', filename='images/case1.png') }}" alt="金融风控案例">
+            </div>
+            <div class="case-content">
+                <div class="case-badge">金融风控</div>
+                <h4>某大型商业银行 - AI风控系统</h4>
+                <p class="case-description">
+                    为某大型商业银行开发AI风控系统，实现智能反欺诈和风险识别。
+                </p>
+                <div class="case-results">
+                    <div class="result-item">
+                        <span class="result-number">99.2%</span>
+                        <span class="result-label">欺诈识别准确率</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">30%</span>
+                        <span class="result-label">成本节省</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 案例2 -->
+        <div class="case-card">
+            <div class="case-image">
+                <img src="{{ url_for('static', filename='images/case2.png') }}" alt="电商推荐案例">
+            </div>
+            <div class="case-content">
+                <div class="case-badge">电商推荐</div>
+                <h4>某电商平台 - 智能推荐系统</h4>
+                <p class="case-description">
+                    开发个性化推荐算法，提升用户体验和商品转化率。
+                </p>
+                <div class="case-results">
+                    <div class="result-item">
+                        <span class="result-number">45%</span>
+                        <span class="result-label">转化率提升</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">2.5x</span>
+                        <span class="result-label">用户留存提升</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 案例3 -->
+        <div class="case-card">
+            <div class="case-image">
+                <img src="{{ url_for('static', filename='images/case3.png') }}" alt="制造业优化案例">
+            </div>
+            <div class="case-content">
+                <div class="case-badge">制造业优化</div>
+                <h4>某制造企业 - 产品质量检测系统</h4>
+                <p class="case-description">
+                    基于计算机视觉的产品质量自动检测，实现全流程质量控制。
+                </p>
+                <div class="case-results">
+                    <div class="result-item">
+                        <span class="result-number">98.5%</span>
+                        <span class="result-label">缺陷检出率</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">20%</span>
+                        <span class="result-label">检测效率提升</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 案例4 -->
+        <div class="case-card">
+            <div class="case-image">
+                <img src="{{ url_for('static', filename='images/case4.png') }}" alt="客服AI案例">
+            </div>
+            <div class="case-content">
+                <div class="case-badge">客户服务</div>
+                <h4>某互联网公司 - AI客服机器人</h4>
+                <p class="case-description">
+                    开发智能客服机器人，支持自然语言理解和多轮对话。
+                </p>
+                <div class="case-results">
+                    <div class="result-item">
+                        <span class="result-number">78%</span>
+                        <span class="result-label">自动处理率</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">4.8/5</span>
+                        <span class="result-label">用户满意度</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 服务流程 -->
+<div class="process-section">
+    <h2 class="section-title">我们的服务流程</h2>
+    <div class="process-timeline">
+        <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+                <h4>需求评估</h4>
+                <p>深入了解企业业务现状和AI应用需求</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+                <h4>方案设计</h4>
+                <p>制定详细的技术方案和实施计划</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+                <h4>开发实施</h4>
+                <p>按计划进行开发、测试和优化</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+                <h4>上线部署</h4>
+                <p>系统上线、员工培训和知识转移</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">5</div>
+            <div class="timeline-content">
+                <h4>持续优化</h4>
+                <p>长期技术支持、监控和持续改进</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 行业经验 -->
+<div class="industries-section">
+    <h2 class="section-title">行业经验</h2>
+    <div class="industries-grid">
+        <div class="industry-tag">
+            <span class="industry-icon">🏦</span>
+            <span class="industry-name">金融科技</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">🛍️</span>
+            <span class="industry-name">电商零售</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">🏭</span>
+            <span class="industry-name">制造业</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">🏥</span>
+            <span class="industry-name">医疗健康</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">📱</span>
+            <span class="industry-name">互联网</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">🚗</span>
+            <span class="industry-name">汽车出行</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">✈️</span>
+            <span class="industry-name">交通运输</span>
+        </div>
+        <div class="industry-tag">
+            <span class="industry-icon">🎓</span>
+            <span class="industry-name">教育培训</span>
+        </div>
+    </div>
+</div>
+
+<!-- CTA 按钮 -->
+<div class="services-cta">
+    <h2>准备好开始您的AI之旅了吗？</h2>
+    <p>联系我们的专家团队，获得免费的AI应用评估报告</p>
+    {% if session.get('user_id') %}
+        <a class="cta-button" href="{{ url_for('contact') }}">立即咨询</a>
+    {% else %}
+        <a class="cta-button" href="{{ url_for('login') }}" onclick="return confirm('需要登录才能提交咨询。要现在登录吗？')">立即咨询</a>
+    {% endif %}
+</div>
+{% endblock %}

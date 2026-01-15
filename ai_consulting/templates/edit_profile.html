@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}编辑个人资料{% endblock %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <div class="form-wrapper">
+        <h1>编辑个人资料</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" value="{{ user.username }}" disabled>
+                <small>用户名不可修改</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" value="{{ user.email }}" disabled>
+                <small>邮箱不可修改</small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">电话</label>
+                <input type="tel" id="phone" name="phone" value="{{ user.phone or '' }}" placeholder="输入您的电话号码">
+            </div>
+
+            <div class="form-group">
+                <label for="company">公司</label>
+                <input type="text" id="company" name="company" value="{{ user.company or '' }}" placeholder="输入您的公司名称">
+            </div>
+
+            <div class="form-group">
+                <label for="bio">个人简介</label>
+                <textarea id="bio" name="bio" placeholder="简述您的专业背景和兴趣" rows="5">{{ user.bio or '' }}</textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">保存更改</button>
+                <a href="{{ url_for('profile') }}" class="btn-cancel">取消</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

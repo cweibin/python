@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI咨询 - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">AI咨询</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">首页</a>
+            <a href="{{ url_for('services') }}">服务</a>
+            <a href="{{ url_for('about') }}">关于</a>
+            <a href="{{ url_for('contact') }}">联系我们</a>
+            {% if session.get('username') %}
+                <span class="user-info">欢迎, {{ session.get('username') }}</span>
+                <a href="{{ url_for('profile') }}" class="btn-profile">我的资料</a>
+                <a href="{{ url_for('logout') }}" class="btn-logout">退出登录</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn-login">登录</a>
+                <a href="{{ url_for('register') }}" class="btn-register">注册</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="content">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AI咨询。保留所有权利。</p>
+    </footer>
+</body>
+</html>

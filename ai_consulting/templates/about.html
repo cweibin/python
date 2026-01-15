@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}关于我们{% endblock %}
+
+{% block content %}
+<div class="about">
+    <div class="about-header">
+        <img src="{{ url_for('static', filename='images/team.jpg') }}" alt="我们的团队" class="team-image">
+        <h1>关于我们</h1>
+    </div>
+    <div class="about-content">
+        <p>我们是一家专注于人工智能咨询的公司，致力于帮助企业在数字化转型过程中充分利用AI技术的潜力。</p>
+        <div class="office-images">
+            <img src="{{ url_for('static', filename='images/office1.jpg') }}" alt="办公环境">
+            <img src="{{ url_for('static', filename='images/office2.jpg') }}" alt="会议室">
+            <img src="{{ url_for('static', filename='images/office3.jpg') }}" alt="办公环境3">
+            <img src="{{ url_for('static', filename='images/office4.jpg') }}" alt="办公环境4">
+        </div>
+        <h2>我们的优势</h2>
+        <ul>
+            <li>
+                <img src="{{ url_for('static', filename='images/icons/tech_team.png') }}" alt="专业的技术团队图标" class="advantage-icon" style="width: 64px; height: 64px;">
+                专业的技术团队
+                <p>我们的团队由经验丰富的AI专家组成，具备深厚的技术背景和丰富的项目经验。</p>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/icons/industry_experience.png') }}" alt="丰富的行业经验图标" class="advantage-icon" style="width: 64px; height: 64px;">
+                丰富的行业经验
+                <p>我们在多个行业中积累了丰富的AI应用经验，能够为不同行业的客户提供量身定制的解决方案。</p>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/icons/custom_solutions.png') }}" alt="定制化的解决方案图标" class="advantage-icon" style="width: 64px; height: 64px;">
+                定制化的解决方案
+                <p>我们根据客户的具体需求，提供高度定制化的AI解决方案，确保最大化实现业务价值。</p>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/icons/tech_support.png') }}" alt="全程技术支持图标" class="advantage-icon" style="width: 64px; height: 64px;">
+                全程技术支持
+                <p>我们提供从咨询、开发到实施的全程技术支持，确保AI项目的顺利进行和持续优化。</p>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>用人工智能改变您的企业</h1>
+        <p>我们帮助企业利用人工智能推动增长和创新</p>
+        {% if session.get('user_id') %}
+            <a class="cta-button" href="{{ url_for('contact') }}">立即开始</a>
+        {% else %}
+            <a class="cta-button" href="{{ url_for('login') }}" onclick="return confirm('需要登录才能提交咨询。要现在登录吗？')">立即开始</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="features">
+    <div class="feature">
+        <img src="{{ url_for('static', filename='images/consulting.png') }}" alt="专家咨询">
+        <h2>专家咨询</h2>
+        <p>我们的AI专家团队为您的业务需求提供战略指导。</p>
+    </div>
+    <div class="feature">
+        <img src="{{ url_for('static', filename='images/solution.png') }}" alt="定制解决方案">
+        <h2>定制解决方案</h2>
+        <p>我们开发满足您特定需求的AI解决方案。</p>
+    </div>
+    <div class="feature">
+        <img src="{{ url_for('static', filename='images/support.png') }}" alt="实施支持">
+        <h2>实施支持</h2>
+        <p>为您的组织提供AI解决方案的端到端支持。</p>
+    </div>
+</div>
+
+<div class="charts">
+    <h2>我们的数据</h2>
+    <div class="chart-container">
+        <canvas id="chart1"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="chart2"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="chart3"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof Chart === 'undefined') {
+            alert('Chart.js library is not loaded. Please check your internet connection or the library URL.');
+            return;
+        }
+        const ctx1 = document.getElementById('chart1').getContext('2d');
+        const chart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Dataset 1',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('chart2').getContext('2d');
+        const chart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Dataset 2',
+                    data: [7, 11, 5, 8, 3, 7],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('chart3').getContext('2d');
+        const chart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                datasets: [{
+                    label: 'Dataset 3',
+                    data: [15, 10, 5, 2],
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+{% endblock %}
